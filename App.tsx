@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View,  } from 'react-native';
+import { Text, View } from 'react-native';
 
 import { ThemeProvider } from "styled-components/native";
 import AppLoading from "expo-app-loading";
@@ -8,6 +8,9 @@ import { useFonts } from "expo-font"
 import { Nunito_400Regular, Nunito_700Bold } from "@expo-google-fonts/nunito";
 import { Roboto_400Regular, Roboto_500Medium } from "@expo-google-fonts/roboto";
 import theme from './src/Global/theme';
+
+import Login from "./src/Screens/Login"
+import ExpoStatusBar from 'expo-status-bar/build/ExpoStatusBar';
 
 export default function App() {
 
@@ -20,10 +23,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <View>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <ExpoStatusBar hidden/>
+      <Login/>
     </ThemeProvider>
   );
 }
