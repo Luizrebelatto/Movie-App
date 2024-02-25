@@ -2,5 +2,6 @@ import styled from "styled-components/native";
 
 export const Wrapper = styled.View`
     flex: 1;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.colors.neutral};
+    padding: 200px;
 `;
