@@ -1,8 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Login } from "../Screens/Login";
+import Login from "../Screens/Login";
 
-export default function AuthRoutes(){
+export function AuthRoutes(){
     const Stack = createStackNavigator();
     return (
         <Stack.Navigator initialRouteName="login" screenOptions={{ headerShown: false }}>

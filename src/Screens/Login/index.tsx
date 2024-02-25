@@ -1,7 +1,7 @@
 import {  Text } from "react-native";
-import { Wrapper } from "../../Components/Container/styles"
+import { Wrapper } from "./styles"
 
-export function Login(){
+export default function Login(){
     return (
         <Wrapper>
             <Text style={{ color: '#fff' }}>Telaogin</Text>
