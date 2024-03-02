@@ -2,14 +2,14 @@ import { Wrapper, ButtonWithBackground, TextButton, ButtonTransparent, TextWhite
 import Input from "../../Components/Input"
 import { View } from "react-native"
 
-export default function Login({ navigation }){
+export default function Movies(){
     return (
         <Wrapper style={{ paddingTop: "50%" }}>
             <Input/>
             <Input/>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <ButtonWithBackground onPress={()=> navigation.navigate("tabRoutes")}>
-                    <TextButton disabled>Entrar</TextButton>
+                <ButtonWithBackground disabled>
+                    <TextButton disabled>Tela Movies</TextButton>
                 </ButtonWithBackground>
                 <ButtonTransparent>
                     <TextWhite>Esqueci a senha</TextWhite>
