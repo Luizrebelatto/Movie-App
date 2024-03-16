@@ -37,7 +37,6 @@ export default function App() {
   hideAsync()
 
   return (
-    
       <ThemeProvider theme={theme}>
         <StatusBar hidden/>
         <Routes/>
