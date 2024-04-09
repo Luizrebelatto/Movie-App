@@ -45,8 +45,9 @@ export default function MyTabBar({ state, descriptors, navigation, position }) {
               onLongPress={onLongPress}
               activeOpacity={0.9}
               disabled={state.index === index}
+              key={index}
             >
-              <S.Title disabled={state.index === index}>
+              <S.Title disabled={state.index === index} key={index}>
                 {label}
               </S.Title>
             </S.Button>
