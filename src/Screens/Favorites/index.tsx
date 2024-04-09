@@ -1,10 +1,10 @@
 import { Wrapper } from "./styles"
-import { View, Text } from "react-native"
+import FlatListMovies from "../../Components/FlatListMovies";
 
 export default function Favorites(){
     return (
         <Wrapper>
-            <Text style={{ color: "white" }}>TELA FILMES 1</Text>
+            <FlatListMovies/>
         </Wrapper>
     )
 }
