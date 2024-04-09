@@ -8,8 +8,8 @@ export const View = styled.View`
     padding-right: 26px;
 `;
 
-export const Content = styled.View`
-    margin-top: 20px;
+export const Content = styled.View<{ statusBarHeight?: number }>`
+    margin-top: ${({ statusBarHeight }) => statusBarHeight}px;
     flex-direction: row;
     justify-content: space-between;
 `;
@@ -17,4 +17,9 @@ export const Content = styled.View`
 export const Title = styled.Text`
     color: white;
     font-size: 22px;
+`;
+
+export const ButtonMenu = styled.TouchableOpacity`
+    width: 20px;
+    height: 20px;
 `;

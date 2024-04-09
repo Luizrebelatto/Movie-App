@@ -38,7 +38,7 @@ export default function App() {
 
   return (
       <ThemeProvider theme={theme}>
-        <StatusBar hidden/>
+        {/* <StatusBar hidden/> */}
         <Routes/>
       </ThemeProvider>
     
