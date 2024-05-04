@@ -23,6 +23,7 @@ const api = () => {
     }, (error: AxiosError) => {
         return Promise.reject(error);
     })
+    
     return instanceApi;
 }
 

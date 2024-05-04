@@ -9,5 +9,6 @@ export function movies(){
             return Promise.reject(error);
         }
     }
+
     return { getMovies }
 }
