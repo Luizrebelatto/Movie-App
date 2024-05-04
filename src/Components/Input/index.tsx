@@ -1,16 +1,20 @@
 import { Wrapper, InputField } from "./styles";
 import { AntDesign } from '@expo/vector-icons';
 
-export default function Input(){
+interface Props {
+    placeholder: string
+}
+
+export default function Input({ placeholder }: Props){
     return(
         <Wrapper>
-            <AntDesign name="closecircleo" size={24} color="white" />
+            <AntDesign name="closecircleo" size={23} color="white" />
             <InputField 
                 maxLength={30}
-                placeholder="Usuário"
+                placeholder={placeholder}
                 placeholderTextColor="white"
             />
-            <AntDesign name="closecircleo" size={24} color="white" />
+            <AntDesign name="closecircleo" size={23} color="white" />
         </Wrapper>
     )
 }

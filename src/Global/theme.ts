@@ -12,5 +12,11 @@ export default {
         nunito_bold: "Nunito_700Bold",
         roboto_regular: "Roboto_400Regular",
         roboto_medium: "Roboto_500Medium"
+    },
+
+    spacements: {
+        short: 8,
+        medium: 16,
+        large: 32
     }
 }

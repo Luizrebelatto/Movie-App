@@ -15,6 +15,12 @@ declare module "styled-components/native" {
             nunito_bold: string;
             roboto_regular: string;
             roboto_medium: string;
+        },
+        
+        spacements: {
+            short: number,
+            medium: number,
+            large: number
         }
     }
 }
