@@ -77,3 +77,7 @@ export const ImageMovie = styled.Image`
     width: 100%;
     height: 526px;
 `;
+
+export const WrapperCard = styled.View`
+    flex-direction: row;
+`;

@@ -1,19 +1,24 @@
-import { Wrapper, TitleMovie, Card, CardTitle, CardDescription, Circle, DescriptionMovie, Title, ImageMovie } from "./styles"
+import { Wrapper, TitleMovie, Card, CardTitle, CardDescription, Circle, DescriptionMovie, Title, ImageMovie, WrapperCard } from "./styles"
 import { TouchableOpacity, View } from "react-native";
-import ImageMarvel from "../../assets/svg/m-marvel.jpeg"
 import { AntDesign } from '@expo/vector-icons';
 
 
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { useState } from "react";
 import theme from "src/Global/theme";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 export default function MovieDetails(){
     const insets = useSafeAreaInsets().top
     const navigation = useNavigation()
+    const route = useRoute()
 
     const [isFavorite, setIsFavorite] = useState(false)
+
+    function formattedDate(date: string) {
+        const dateSplitted = date.split("-").reverse()
+        return `${dateSplitted[0]}/${dateSplitted[1]}/${dateSplitted[2]}`
+    }
 
     return (
         <Wrapper bounces={false} showsVerticalScrollIndicator={false}>
@@ -31,25 +36,54 @@ export default function MovieDetails(){
                     <AntDesign name={!isFavorite ? "hearto" : "heart"} size={14} color="black" />
                 </TouchableOpacity>
             </View>
-            <ImageMovie source={ImageMarvel}/>
+            <ImageMovie source={{ uri:`https://image.tmdb.org/t/p/w440_and_h660_face${route.params.movieSelected?.poster_path}` }}/>
             <View style={{ paddingLeft: 16, paddingRight: 16, paddingBottom: 20 }}>
-                <TitleMovie>Missao</TitleMovie>
+                <TitleMovie>{route.params.movieSelected?.title}</TitleMovie>
                 <Title>Sinopse</Title>
                 <DescriptionMovie>
-                Em Missão Impossível 7: Acerto de Contas Parte 1, Ethan Hunt (Tom Cruise) e a equipe do IMF formada por Ilsa Faust (Rebecca Ferguson), Benji Dunn (Simon Pegg) e Luther Stickell (Ving Rhames) devem rastrear uma nova e aterrorizante arma que representa uma ameaça para toda a humanidade se cair em mãos erradas. Com o controle do futuro e o destino do mundo em jogo, a equipe parte em uma corrida mortal ao redor do planeta. Confrontado por um novo inimigo misterioso e muito perigoso, Ethan assume que nada pode importar mais do que a missão - nem mesmo sua própria vida.Verifique a classificação indicativa no Portal Online da Cultura Digital.
+                    {route.params.movieSelected?.overview}
                 </DescriptionMovie>
                 <View style={{  flexWrap: "wrap", flexDirection:"row", justifyContent: "space-between"}}>
-                    {[0,1,2,3].map(() => (
+                    
                         <Card>
-                            <View style={{ flexDirection: "row" }}>
+                            <WrapperCard>
                                 <Circle>
                                     <AntDesign name="downcircleo" size={14} color="orange" />
                                 </Circle>
-                                <CardTitle>LABEL</CardTitle>
-                            </View>
-                            <CardDescription>Text</CardDescription>
+                                <CardTitle>Lançamento</CardTitle>
+                            </WrapperCard>
+                            <CardDescription>{formattedDate(route.params.movieSelected?.release_date)}</CardDescription>
                         </Card>
-                    ))}
+                        <Card>
+                            <WrapperCard>
+                                <Circle>
+                                    <AntDesign name="downcircleo" size={14} color="orange" />
+                                </Circle>
+                                <CardTitle>Idioma Original</CardTitle>
+                            </WrapperCard>
+                            <CardDescription>{route.params.movieSelected?.original_language}</CardDescription>
+                        </Card>
+                        <Card>
+                            <WrapperCard>
+                                <Circle>
+                                    <AntDesign name="downcircleo" size={14} color="orange" />
+                                </Circle>
+                                <CardTitle>Adulto</CardTitle>
+                            </WrapperCard>
+                            <CardDescription>
+                                {!!route.params.movieSelected?.adult ? "Sim" : "Não"}
+                            </CardDescription>
+                        </Card>
+                        <Card>
+                            <WrapperCard>
+                                <Circle>
+                                    <AntDesign name="downcircleo" size={14} color="orange" />
+                                </Circle>
+                                <CardTitle>Popularidade</CardTitle>
+                            </WrapperCard>
+                            <CardDescription>{route.params.movieSelected?.popularity}</CardDescription>
+                        </Card>
+                   
                 </View>
             </View>
         </Wrapper>

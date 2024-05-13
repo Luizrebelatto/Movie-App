@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const Image = styled.Image`
     width: 158px;
     height: 228px;
-    border-radius: 8px;
+    border-radius: 20px;
 `;
 
 export const WrapperImage = styled.TouchableOpacity`
