@@ -2,7 +2,8 @@
 
 [FortuneSheet (3).pdf](https://github.com/user-attachments/files/25126764/FortuneSheet.3.pdf)
 
-[Uploading FortuneSheet (1).pptx…]()
+
+[FortuneSheet (1).pptx](https://github.com/user-attachments/files/25274603/FortuneSheet.1.pptx)
 
 
 https://github.com/user-attachments/assets/27794174-0d1e-4df2-b4e8-63a5719a46d3
